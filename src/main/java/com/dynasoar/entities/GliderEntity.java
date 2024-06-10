@@ -7,15 +7,15 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.World;
 
-public class glider extends VehicleEntity {
+public class GliderEntity extends VehicleEntity {
 
  
-    public glider(EntityType<? extends VehicleEntity> entityType, World world) {
+    public GliderEntity(EntityType<? extends VehicleEntity> entityType, World world) {
         super(entityType, world);
     }
 
     
-   public glider(World world, double x, double y, double z) {
+   public GliderEntity(World world, double x, double y, double z) {
     this(EntityType.BOAT, world);
     this.setPosition(x, y, z);
     this.prevX = x;

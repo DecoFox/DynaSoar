@@ -23,7 +23,7 @@ public class DynaSoarClient implements ClientModInitializer {
             return new gliderRenderer(context);
         });
 		*/
-        EntityRendererRegistry.register(DynaSoar.GLIDER, gliderRenderer::new);
+        EntityRendererRegistry.register(DynaSoar.GLIDER, GliderRenderer::new);
         /* 
 		EntityRendererRegistry.register(DynaSoar.GLIDER, (context) -> {
             return new gliderRenderer(context);
@@ -31,6 +31,6 @@ public class DynaSoarClient implements ClientModInitializer {
         */
 
  
-        EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, gliderModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, GliderModel::getTexturedModelData);
     }
 }

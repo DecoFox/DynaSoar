@@ -1,6 +1,6 @@
 package com.dynasoar;
 
-import com.dynasoar.entities.glider;
+import com.dynasoar.entities.GliderEntity;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.EntityType;
@@ -30,10 +30,10 @@ public class DynaSoar implements ModInitializer {
 
 
      
-    public static final EntityType<glider> GLIDER = Registry.register(
+    public static final EntityType<GliderEntity> GLIDER = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier("dynasoar", "glider"),
-            EntityType.Builder.<glider>create(glider::new, SpawnGroup.MISC)
+            EntityType.Builder.<GliderEntity>create(GliderEntity::new, SpawnGroup.MISC)
             .dimensions(0.98F, 0.98F)
             .build()
     );

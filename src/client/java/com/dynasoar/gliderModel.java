@@ -1,6 +1,6 @@
 package com.dynasoar;
 
-import com.dynasoar.entities.glider;
+import com.dynasoar.entities.GliderEntity;
 import com.google.common.collect.ImmutableList;
 
 import net.minecraft.client.model.ModelData;
@@ -15,11 +15,11 @@ import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 
 
-public class gliderModel<T extends glider> extends EntityModel<glider> {
+public class GliderModel<T extends GliderEntity> extends EntityModel<GliderEntity> {
  
     private final ModelPart base;
  
-    public gliderModel(ModelPart modelPart) {
+    public GliderModel(ModelPart modelPart) {
         this.base = modelPart.getChild(EntityModelPartNames.CUBE);
     }
  
@@ -31,7 +31,7 @@ public class gliderModel<T extends glider> extends EntityModel<glider> {
     }
  
     @Override
-    public void setAngles(glider entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+    public void setAngles(GliderEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
     }
  
     @Override
