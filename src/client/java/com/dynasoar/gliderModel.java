@@ -3,6 +3,7 @@ package com.dynasoar;
 import com.dynasoar.entities.GliderEntity;
 import com.google.common.collect.ImmutableList;
 
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.ModelData;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.ModelPartBuilder;
@@ -13,14 +14,18 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
+import net.fabricmc.api.EnvType;
 
 
-public class GliderModel<T extends GliderEntity> extends EntityModel<GliderEntity> {
+
+@Environment(EnvType.CLIENT)
+public class GliderModel<T extends GliderEntity> extends EntityModel<T> {
  
-    private final ModelPart base;
+    private final ModelPart root;
  
-    public GliderModel(ModelPart modelPart) {
-        this.base = modelPart.getChild(EntityModelPartNames.CUBE);
+    public GliderModel(ModelPart root) {
+        this.root = root.getChild(EntityModelPartNames.CUBE);
+        System.out.println("Constructing?");
     }
  
     public static TexturedModelData getTexturedModelData() {
@@ -36,8 +41,9 @@ public class GliderModel<T extends GliderEntity> extends EntityModel<GliderEntit
  
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-        ImmutableList.of(this.base).forEach((modelRenderer) -> {
+        ImmutableList.of(this.root).forEach((modelRenderer) -> {
             modelRenderer.render(matrices, vertices, light, overlay, red, green, blue, alpha);
         });
+        System.out.println("Rendering?");
     }
 }
